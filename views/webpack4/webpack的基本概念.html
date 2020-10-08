@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack的基本概念 | -Y</title>
+    <meta name="description" content="talk is cheap,show me the code">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.31260247.css" as="style"><link rel="preload" href="/assets/js/app.65092636.js" as="script"><link rel="preload" href="/assets/js/3.93b327f6.js" as="script"><link rel="preload" href="/assets/js/1.007b83bd.js" as="script"><link rel="preload" href="/assets/js/136.40d28c49.js" as="script"><link rel="prefetch" href="/assets/js/10.8a266fd1.js"><link rel="prefetch" href="/assets/js/100.a7f3261a.js"><link rel="prefetch" href="/assets/js/101.82dbe2c3.js"><link rel="prefetch" href="/assets/js/102.d4a157f5.js"><link rel="prefetch" href="/assets/js/103.88c10536.js"><link rel="prefetch" href="/assets/js/104.089edd91.js"><link rel="prefetch" href="/assets/js/105.6d39b1b4.js"><link rel="prefetch" href="/assets/js/106.6ad9183e.js"><link rel="prefetch" href="/assets/js/107.2cd4daf0.js"><link rel="prefetch" href="/assets/js/108.2d26b306.js"><link rel="prefetch" href="/assets/js/109.70560935.js"><link rel="prefetch" href="/assets/js/11.059a9df7.js"><link rel="prefetch" href="/assets/js/110.4aac6cb5.js"><link rel="prefetch" href="/assets/js/111.03570cc7.js"><link rel="prefetch" href="/assets/js/112.d347ca47.js"><link rel="prefetch" href="/assets/js/113.2b5952ce.js"><link rel="prefetch" href="/assets/js/114.e7844e67.js"><link rel="prefetch" href="/assets/js/115.0f6b2541.js"><link rel="prefetch" href="/assets/js/116.78849b88.js"><link rel="prefetch" href="/assets/js/117.0bfb5e54.js"><link rel="prefetch" href="/assets/js/118.570dfa41.js"><link rel="prefetch" href="/assets/js/119.a32e639b.js"><link rel="prefetch" href="/assets/js/12.fe672a7f.js"><link rel="prefetch" href="/assets/js/120.ac44957e.js"><link rel="prefetch" href="/assets/js/121.bcb99850.js"><link rel="prefetch" href="/assets/js/122.aab4de97.js"><link rel="prefetch" href="/assets/js/123.dbd8cc02.js"><link rel="prefetch" href="/assets/js/124.24af1605.js"><link rel="prefetch" href="/assets/js/125.099bf609.js"><link rel="prefetch" href="/assets/js/126.ade29fae.js"><link rel="prefetch" href="/assets/js/127.55c85eab.js"><link rel="prefetch" href="/assets/js/128.dbbd3875.js"><link rel="prefetch" href="/assets/js/129.e00d9f0f.js"><link rel="prefetch" href="/assets/js/13.a4cd33d9.js"><link rel="prefetch" href="/assets/js/130.918c8d01.js"><link rel="prefetch" href="/assets/js/131.6fcaaf29.js"><link rel="prefetch" href="/assets/js/132.82ac3b6e.js"><link rel="prefetch" href="/assets/js/133.61e8ff28.js"><link rel="prefetch" href="/assets/js/134.013b36ac.js"><link rel="prefetch" href="/assets/js/135.3766598d.js"><link rel="prefetch" href="/assets/js/137.557bb02e.js"><link rel="prefetch" href="/assets/js/138.3560b49e.js"><link rel="prefetch" href="/assets/js/139.ebe28571.js"><link rel="prefetch" href="/assets/js/14.567203b5.js"><link rel="prefetch" href="/assets/js/140.2f2274d7.js"><link rel="prefetch" href="/assets/js/141.e302c14c.js"><link rel="prefetch" href="/assets/js/142.1ed1495c.js"><link rel="prefetch" href="/assets/js/143.6af4d0d0.js"><link rel="prefetch" href="/assets/js/144.1b33bfda.js"><link rel="prefetch" href="/assets/js/145.8173ef8a.js"><link rel="prefetch" href="/assets/js/146.90a4384a.js"><link rel="prefetch" href="/assets/js/147.1c961fea.js"><link rel="prefetch" href="/assets/js/148.e4885be1.js"><link rel="prefetch" href="/assets/js/149.7337b837.js"><link rel="prefetch" href="/assets/js/15.b88b7bcc.js"><link rel="prefetch" href="/assets/js/150.32802b12.js"><link rel="prefetch" href="/assets/js/16.94ded7e1.js"><link rel="prefetch" href="/assets/js/17.dae6c17b.js"><link rel="prefetch" href="/assets/js/18.5ed6620b.js"><link rel="prefetch" href="/assets/js/19.3b21c762.js"><link rel="prefetch" href="/assets/js/20.4e6908ec.js"><link rel="prefetch" href="/assets/js/21.d56c6e3d.js"><link rel="prefetch" href="/assets/js/22.bc76bd29.js"><link rel="prefetch" href="/assets/js/23.92582500.js"><link rel="prefetch" href="/assets/js/24.2bf0dc44.js"><link rel="prefetch" href="/assets/js/25.e119f75a.js"><link rel="prefetch" href="/assets/js/26.72261160.js"><link rel="prefetch" href="/assets/js/27.7bf02679.js"><link rel="prefetch" href="/assets/js/28.1a99d1e5.js"><link rel="prefetch" href="/assets/js/29.e7de7156.js"><link rel="prefetch" href="/assets/js/30.c6396f26.js"><link rel="prefetch" href="/assets/js/31.ec0edc85.js"><link rel="prefetch" href="/assets/js/32.92023f04.js"><link rel="prefetch" href="/assets/js/33.f3cbcab7.js"><link rel="prefetch" href="/assets/js/34.79383989.js"><link rel="prefetch" href="/assets/js/35.8ad6b3b0.js"><link rel="prefetch" href="/assets/js/36.6887139a.js"><link rel="prefetch" href="/assets/js/37.94e32993.js"><link rel="prefetch" href="/assets/js/38.dc8c5c35.js"><link rel="prefetch" href="/assets/js/39.d1c25d29.js"><link rel="prefetch" href="/assets/js/4.fc5961d4.js"><link rel="prefetch" href="/assets/js/40.458b4cba.js"><link rel="prefetch" href="/assets/js/41.58ae56f9.js"><link rel="prefetch" href="/assets/js/42.2f4c1633.js"><link rel="prefetch" href="/assets/js/43.3ed38e9e.js"><link rel="prefetch" href="/assets/js/44.ff33b939.js"><link rel="prefetch" href="/assets/js/45.458cdad0.js"><link rel="prefetch" href="/assets/js/46.aabd78f3.js"><link rel="prefetch" href="/assets/js/47.02074ec0.js"><link rel="prefetch" href="/assets/js/48.1fdf2200.js"><link rel="prefetch" href="/assets/js/49.619beeb3.js"><link rel="prefetch" href="/assets/js/5.136b2e69.js"><link rel="prefetch" href="/assets/js/50.d8f1bd85.js"><link rel="prefetch" href="/assets/js/51.99ce9396.js"><link rel="prefetch" href="/assets/js/52.18f69d9f.js"><link rel="prefetch" href="/assets/js/53.81d326f4.js"><link rel="prefetch" href="/assets/js/54.b3bea7cc.js"><link rel="prefetch" href="/assets/js/55.1db93438.js"><link rel="prefetch" href="/assets/js/56.9d850e93.js"><link rel="prefetch" href="/assets/js/57.4873b0cf.js"><link rel="prefetch" href="/assets/js/58.230f3cd7.js"><link rel="prefetch" href="/assets/js/59.fc8173d7.js"><link rel="prefetch" href="/assets/js/6.9bf91798.js"><link rel="prefetch" href="/assets/js/60.710d6c06.js"><link rel="prefetch" href="/assets/js/61.5289659f.js"><link rel="prefetch" href="/assets/js/62.5a1962d6.js"><link rel="prefetch" href="/assets/js/63.d5e1849a.js"><link rel="prefetch" href="/assets/js/64.98776a1e.js"><link rel="prefetch" href="/assets/js/65.3ab3d001.js"><link rel="prefetch" href="/assets/js/66.b92f81ef.js"><link rel="prefetch" href="/assets/js/67.9a74b1af.js"><link rel="prefetch" href="/assets/js/68.fb12a11c.js"><link rel="prefetch" href="/assets/js/69.2413fa4e.js"><link rel="prefetch" href="/assets/js/7.6c70f56e.js"><link rel="prefetch" href="/assets/js/70.a3f104a9.js"><link rel="prefetch" href="/assets/js/71.f21c647a.js"><link rel="prefetch" href="/assets/js/72.bef4dc63.js"><link rel="prefetch" href="/assets/js/73.9a568659.js"><link rel="prefetch" href="/assets/js/74.61acd262.js"><link rel="prefetch" href="/assets/js/75.7434c4d8.js"><link rel="prefetch" href="/assets/js/76.efa02202.js"><link rel="prefetch" href="/assets/js/77.fe707c01.js"><link rel="prefetch" href="/assets/js/78.2a2699fe.js"><link rel="prefetch" href="/assets/js/79.9da356e5.js"><link rel="prefetch" href="/assets/js/8.59dcb8e8.js"><link rel="prefetch" href="/assets/js/80.b337ce8c.js"><link rel="prefetch" href="/assets/js/81.ee85ce32.js"><link rel="prefetch" href="/assets/js/82.7ef95c6d.js"><link rel="prefetch" href="/assets/js/83.9a24f5dd.js"><link rel="prefetch" href="/assets/js/84.d8fdb135.js"><link rel="prefetch" href="/assets/js/85.0bf0fbdc.js"><link rel="prefetch" href="/assets/js/86.f8445dad.js"><link rel="prefetch" href="/assets/js/87.ef6225ab.js"><link rel="prefetch" href="/assets/js/88.1a861346.js"><link rel="prefetch" href="/assets/js/89.4b0d3052.js"><link rel="prefetch" href="/assets/js/9.576042d3.js"><link rel="prefetch" href="/assets/js/90.5f00db52.js"><link rel="prefetch" href="/assets/js/91.483b63c9.js"><link rel="prefetch" href="/assets/js/92.187a2847.js"><link rel="prefetch" href="/assets/js/93.719cf1ef.js"><link rel="prefetch" href="/assets/js/94.fa1994d7.js"><link rel="prefetch" href="/assets/js/95.139be99d.js"><link rel="prefetch" href="/assets/js/96.9953f8fd.js"><link rel="prefetch" href="/assets/js/97.8fe04ba5.js"><link rel="prefetch" href="/assets/js/98.d181be5e.js"><link rel="prefetch" href="/assets/js/99.12fc2f78.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.31260247.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-4698c43e><div data-v-4698c43e><div id="loader-wrapper" class="loading-wrapper" data-v-4b73742e data-v-4698c43e data-v-4698c43e><div class="loader-main" data-v-4b73742e><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-6cbeab0a data-v-4698c43e data-v-4698c43e><h3 class="title" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a>-Y</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a><input type="password" value="" data-v-6cbeab0a> <span data-v-6cbeab0a>Konck! Knock!</span> <button data-v-6cbeab0a>OK</button></label> <div class="footer" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a><span data-v-6cbeab0a><i class="iconfont reco-theme" data-v-6cbeab0a></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-6cbeab0a>vuePress-theme-reco</a></span> <span data-v-6cbeab0a><i class="iconfont reco-copyright" data-v-6cbeab0a></i> <a data-v-6cbeab0a><span data-v-6cbeab0a>-Y</span>
+            
+          <span data-v-6cbeab0a>2017 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-4698c43e><header class="navbar" data-v-4698c43e><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/headimg.jpg" alt="-Y" class="logo"> <span class="site-name">-Y</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/React/" class="nav-link"><i class="iconfont undefined"></i>
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/categories/es10/" class="nav-link"><i class="iconfont undefined"></i>
+  es10
+</a></li><li class="dropdown-item"><!----> <a href="/categories/es5/" class="nav-link"><i class="iconfont undefined"></i>
+  es5
+</a></li><li class="dropdown-item"><!----> <a href="/categories/es6/" class="nav-link"><i class="iconfont undefined"></i>
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/es7/" class="nav-link"><i class="iconfont undefined"></i>
+  es7
+</a></li><li class="dropdown-item"><!----> <a href="/categories/es8/" class="nav-link"><i class="iconfont undefined"></i>
+  es8
+</a></li><li class="dropdown-item"><!----> <a href="/categories/es9/" class="nav-link"><i class="iconfont undefined"></i>
+  es9
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js高级/" class="nav-link"><i class="iconfont undefined"></i>
+  js高级
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具类/" class="nav-link"><i class="iconfont undefined"></i>
+  工具类
+</a></li><li class="dropdown-item"><!----> <a href="/categories/TS/" class="nav-link"><i class="iconfont undefined"></i>
+  TS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/VUE/" class="nav-link"><i class="iconfont undefined"></i>
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/categories/WebPack/" class="nav-link"><i class="iconfont undefined"></i>
+  WebPack
+</a></li><li class="dropdown-item"><!----> <a href="/categories/小程序/" class="nav-link"><i class="iconfont undefined"></i>
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/categories/网址收藏/" class="nav-link"><i class="iconfont undefined"></i>
+  网址收藏
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      网址
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.npmjs.com/~reco_luan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-npm"></i>
+  NPM
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/cd674a19515e" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-jianshu"></i>
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.cnblogs.com/luanhewei/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-bokeyuan"></i>
+  博客圆
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://mp.weixin.qq.com/s/mXFqeUTegdvPliXknAAG_A" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-wechat"></i>
+  WeChat
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-4698c43e></div> <aside class="sidebar" data-v-4698c43e><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/headimg.jpg" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    -Y
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>137</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>14</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/React/" class="nav-link"><i class="iconfont undefined"></i>
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/categories/es10/" class="nav-link"><i class="iconfont undefined"></i>
+  es10
+</a></li><li class="dropdown-item"><!----> <a href="/categories/es5/" class="nav-link"><i class="iconfont undefined"></i>
+  es5
+</a></li><li class="dropdown-item"><!----> <a href="/categories/es6/" class="nav-link"><i class="iconfont undefined"></i>
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/es7/" class="nav-link"><i class="iconfont undefined"></i>
+  es7
+</a></li><li class="dropdown-item"><!----> <a href="/categories/es8/" class="nav-link"><i class="iconfont undefined"></i>
+  es8
+</a></li><li class="dropdown-item"><!----> <a href="/categories/es9/" class="nav-link"><i class="iconfont undefined"></i>
+  es9
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js高级/" class="nav-link"><i class="iconfont undefined"></i>
+  js高级
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具类/" class="nav-link"><i class="iconfont undefined"></i>
+  工具类
+</a></li><li class="dropdown-item"><!----> <a href="/categories/TS/" class="nav-link"><i class="iconfont undefined"></i>
+  TS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/VUE/" class="nav-link"><i class="iconfont undefined"></i>
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/categories/WebPack/" class="nav-link"><i class="iconfont undefined"></i>
+  WebPack
+</a></li><li class="dropdown-item"><!----> <a href="/categories/小程序/" class="nav-link"><i class="iconfont undefined"></i>
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/categories/网址收藏/" class="nav-link"><i class="iconfont undefined"></i>
+  网址收藏
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      网址
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.npmjs.com/~reco_luan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-npm"></i>
+  NPM
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/cd674a19515e" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-jianshu"></i>
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.cnblogs.com/luanhewei/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-bokeyuan"></i>
+  博客圆
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://mp.weixin.qq.com/s/mXFqeUTegdvPliXknAAG_A" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-wechat"></i>
+  WeChat
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>webpack的基本概念</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/webpack4/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html#入口" class="sidebar-link">入口</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/webpack4/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html#loader" class="sidebar-link">loader</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/webpack4/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html#plugin" class="sidebar-link">plugin</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/webpack4/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html#输出" class="sidebar-link">输出</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-6cbeab0a data-v-4698c43e><h3 class="title" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a>webpack的基本概念</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a><input type="password" value="" data-v-6cbeab0a> <span data-v-6cbeab0a>Konck! Knock!</span> <button data-v-6cbeab0a>OK</button></label> <div class="footer" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a><span data-v-6cbeab0a><i class="iconfont reco-theme" data-v-6cbeab0a></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-6cbeab0a>vuePress-theme-reco</a></span> <span data-v-6cbeab0a><i class="iconfont reco-copyright" data-v-6cbeab0a></i> <a data-v-6cbeab0a><span data-v-6cbeab0a>-Y</span>
+            
+          <span data-v-6cbeab0a>2017 - </span>
+          2020
+        </a></span></div></div> <div data-v-4698c43e><main class="page"><!----> <div class="page-title" style="display:none;"><h1>webpack的基本概念</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>-Y</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2018-12-15</span></i> <i class="iconfont reco-eye" data-v-484a899e><!----></i> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      WebPack
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="webpack的基本概念"><a href="#webpack的基本概念" class="header-anchor">#</a> webpack的基本概念</h1> <p>webpack本质上是一个打包工具，它会根据代码的内容解析模块依赖，帮助我们把多个模块的代码打包，借用一下webpack官网图
+<img src="https://pcaaron.github.io/webpack/historyWebpack.jpg" alt="webpack">
+如图 webpack会把我们项目中使用到的多个代码模块，打包构建成项目运行仅需要的几个静态文件，webpack有着非常丰富的配置项，提供了十分强大的扩展能力，
+可以在打包构建的过程中做很多事情，来看下webpack的基本概念</p> <h2 id="入口"><a href="#入口" class="header-anchor">#</a> 入口</h2> <p>在多个代码模块会有一个起始的.js文件，这个就是webpack构建的入口
+webpack会读取这个我那件，并从它开始解析依赖，然后进行文件打包，如图，一开始我们使用webpack构建时候，
+默认的入口文件即时./src/index.js</p> <p>如果是单页面，那么可能入口只有一个，如果是多页面，那么一个页面对应一个构建入口</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>module.exports={
+    entry:'./src/index.js'
+}
+//上述配置等同于
+moudule.exports={
+    entryL{
+        main:'./src/index.js'
+    }
+}
+
+//或者配置多个入口
+module.exports={
+    entry:{
+        foo:'./srx/oage-foo.js',
+        bar:'./srx/page-bar.js',
+
+    }
+}
+//使用数组来对多个文件进行打包
+moudule.exports={
+    entry:{
+        marin:[
+            './src/foo.js',
+            './src/bar.js',
+
+        ]
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>最后的例子,可以理解为多个文件作为一个入口，webpack会解析两个文件的依赖后进行打包</p> <h2 id="loader"><a href="#loader" class="header-anchor">#</a> loader</h2> <p>webpack提供一种垂立多种文件格式的机智，就是使用loader,我们可以把loader理解为一个转换器，负责把某种文件格式的内容装换为webapck可以支持打包的模块</p> <p>例如：在没哟添加额外插件的情况下，webpack会默认吧所有依赖打包成js文件，如古佛入口文件依赖一个
+.hbs的模版文件以及一个.css的样式文件,那么我们需要handlebaers-lodaer来处理.hbs文件，需要css-loader来处理.css的样式文件（其实还去要style-laoder），最终
+把不同格式的文件都解析成为js代码，以便打包后在浏览器中运行。</p> <p>当我们需要使用不同的laoder来接下处理不同类型的文件时，我们可以在module.rules字段来配置相关的规则，例如使用babel来处理.js文件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>module:{
+    //....
+    rules:[
+        {
+            test:/\.jsx?/,//匹配文件路径的正则表达式，一般我们都是配置文件类型后缀
+            include:[
+                path.resolve(_dirname,'src') //指定那些路径下的文件需要经过loader处理
+            ],
+            use:'babel-loader',//指定使用的loader
+
+        }
+    ]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>loader是webpack中比较复杂的一块内容，它支撑这webapck来处理文件的多样性</p> <h2 id="plugin"><a href="#plugin" class="header-anchor">#</a> plugin</h2> <p>在webpack的构建流程中，plugin用于处理更多其他的一些构建任务，可以这么理解吧，模块代码转换的工作由loader来处理，除此以外的任何其他工作都可以交给plugin来完成
+通过添加我们需要的plugin，可以满足更多构建中特殊的需求，例如：要使用压缩js代码的uglifysj-webpack-plugin插件，只要在配置汇总通过plugin字段添加新的plugin即可</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const uglifyPlugin=requeire('uglifyjs-webpack-plugin')
+moudule.exports={
+    plugins:[
+        new uglifyPlugin()
+    ]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>除了压缩js代码的uglifyjs-webpack-plugin，常用的还有定义环境变量的defineplugin,生成css文件的extractwebpackplugin等，在这里提到这些，只要能够对plugin的作用哟孤儿大概的理解
+plugin理论上可以干涉webpack的整个构建流程，可以在流程的每一个步骤中定制自己的构建需求</p> <h2 id="输出"><a href="#输出" class="header-anchor">#</a> 输出</h2> <p>webpack的输出即指webpack最终构建出来的静态文件，可以看看上面webpack官方图片右侧的那些文件，当然，构建结果的文件名，路径等都是可以配置的，使用output字段：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>moudelu.exports={
+    //....
+    output:{
+        path:path.resolve(_dirname,'dist'),
+        filename:'bundle,js',
+    }
+}
+//或者多个入口生成不同的文件
+moudelu.exports={
+    //....
+    output:{
+      entry:{
+          foo:'./src/foo.js',
+          bar:'./src/bar.js',
+      },
+      output:{
+
+      }
+    }
+}
+//路径中使用hash,每次构建时候会有一个不同的hash值，避免发布新版本时候线上使用浏览器缓存
+module.exports={
+    //...
+    output:{
+        filename:'[name],js',
+        path:_dirname+'/dist/[hash]'
+    }
+    }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>我们在一开始直接使用webpack构建时候，默认创建的输出内容就是./dist/main.js</p></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----></main> <!----> <div class="comments-wrapper" data-v-4698c43e><!----></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a81d141e data-v-a81d141e><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a81d141e><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a81d141e></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a81d141e></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到-Y的博客
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="position:fixed;left:0px;bottom:0px;opacity:0.9;z-index:99999;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/assets/js/app.65092636.js" defer></script><script src="/assets/js/3.93b327f6.js" defer></script><script src="/assets/js/1.007b83bd.js" defer></script><script src="/assets/js/136.40d28c49.js" defer></script>
+  </body>
+</html>
